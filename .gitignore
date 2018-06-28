@@ -1,0 +1,7 @@
+*.*
+latex-temp/
+!.gitignore
+!*.md
+!*.tex
+!*.bib
+!*.pdf
