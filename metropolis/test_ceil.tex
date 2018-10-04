@@ -1,0 +1,13 @@
+\documentclass{article}
+\usepackage{tikz}
+% \usepackage{pgfmath,pgfkeys}
+
+\newcommand\RoundingUpFunction[1]{%
+  \pgfmathparse{ceil(#1)}%
+  \pgfmathprintnumber[int trunc]{\pgfmathresult}%
+  \pgfmathresult%
+}
+
+\begin{document}
+\RoundingUpFunction{2.7}
+\end{document}

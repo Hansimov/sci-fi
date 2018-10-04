@@ -1,0 +1,84 @@
+\usepackage{fontawesome}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\setlist{
+    % nolistsep,
+    % labelindent=\parindent,
+    % leftmargin=* % 保证小节标签缩进和上面对齐
+    % labelsep=1em % 标签后的空白
+    % align=left % 标签对齐段落左边缘
+}
+
+\usepackage{geometry}
+\newcommand{\allborder}{8cm}
+\geometry{
+    paperwidth=1285pt,
+    % top=2cm,
+    left=\allborder,
+    right=\allborder,
+}
+
+\usepackage{seqsplit}
+% \newcommand{\hash}[1]{\color{blue}{\ttfamily\seqsplit{#1}}}
+
+\usepackage[active, tightpage]{preview}
+\renewcommand{\PreviewBorder}{\allborder}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\usepackage{nopageno}
+
+\usepackage{listings}
+\lstdefinelanguage{tikz}{
+    basicstyle={\color{green!30} \ttfamily},
+    breaklines = true,
+    breakatwhitespace=true,
+    keepspaces = true,
+    % showspaces=true,
+    % escapechar=`,
+    % mathescape=true,
+}
+\newcommand{\ltz}[1]{\lstinline[language=tikz]{#1}}
+
+\newcommand{\xreftext}[1]{
+    % \item[\textcolor{white}{\textbullet}] {\color{white} \textbf{#1}}
+    \item[\textcolor{white}{\textbullet}] {\color{white} #1}
+}
+
+\newcommand{\xreflink}[1]{
+    \item[\textcolor{green!30}{\large \faLink}] \ltz{#1}
+}
+\newcommand{\yreflink}[1]{
+    \item[\textcolor{green!30}{\large \faLink}] {\color{green!30} \texttt{\seqsplit{#1}}}
+}
+
+\newcommand{\xref}[2]{
+    \begin{itemize}
+        \xreftext{#1}
+        \begin{itemize}
+            \xreflink{#2}
+        \end{itemize}
+    \end{itemize}
+}
+
+\newcommand{\yref}[2]{
+    \begin{itemize}
+        \xreftext{#1}
+        \begin{itemize}
+            \yreflink{#2}
+        \end{itemize}
+    \end{itemize}
+}
+\newcommand{\xrefmain}[1]{
+    {~\\[2ex] \begin{flushleft} \color{cyan!50} \fs{27} #1 \end{flushleft}}
+}
+
+\usepackage[scheme=plain]{ctex}
+% \setCJKmainfont{Microsoft YaHei}
+% \setCJKmainfont{华文琥珀}
+% \setCJKmainfont{楷体}
+\setCJKmainfont{Arial Unicode MS}
+% \setmainfont{Microsoft YaHei}
+\setmainfont{Arial Unicode MS}
+% \setmainfont{Times New Roman}
+\CJKsetecglue{\hskip0.05em plus0.05em minus 0.05em}
+\newcommand{\fs}[1]{\fontsize{#1 pt}{0pt}\selectfont}
