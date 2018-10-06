@@ -1,0 +1,30 @@
+\documentclass[tikz, border=5pt]{standalone}
+
+\input{../../_templates/works-settings.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[x=1em, y=1em]
+
+\node [anchor=center, align=center] (title) {\fs{15}\textbf{大都会（2001）}};
+\node [anchor=west] (root) at ([xshift=\righgap]title.south) {};
+
+\htick{开场}{
+};
+\htick{作品背景}{
+    
+};
+\htick{情节/角色}{
+
+};
+\htick{独特之处}{
+
+};
+
+
+\draw [-Stealth, thick] ([yshift=-1ex]title.south) -- ([xshift=-\righgap, yshift=-1ex]\thispar.south west);
+
+\end{tikzpicture}
+
+
+\end{document}

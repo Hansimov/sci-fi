@@ -4,6 +4,8 @@
 latex-temp/
 _books/
 references/
+_pr_prj
+ref/
 
 !*.md
 !*.tex
